@@ -1,4 +1,4 @@
-package com.example.core_ui.vm
+package com.example.module1.vm
 
 import androidx.lifecycle.ViewModel
 
