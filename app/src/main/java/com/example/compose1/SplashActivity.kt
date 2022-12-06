@@ -19,8 +19,7 @@ class SplashActivity : ComponentActivity() {
             delay(2000)
 
             try {
-                val intent = Intent()
-                intent.setClassName(this@SplashActivity, "com.example.module1.MainActivity")
+                val intent = Intent(this@SplashActivity, MainActivity::class.java)
                 startActivity(intent)
             } catch (e: ClassNotFoundException) {
                 e.printStackTrace()

@@ -10,21 +10,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.module1.R
 import com.example.module1.inputComponents.InputComponents
-import com.example.module1.viewModels.ProfileViewModel
 
 @Preview(showBackground = true)
 @Composable
-fun Profile() {
-    val viewModel = viewModel<ProfileViewModel>()
+fun Profile(onChange: (String) -> Unit = {}) {
+    val focusManager = LocalFocusManager.current
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -44,8 +44,11 @@ fun Profile() {
             modifier = Modifier
                 .padding(start = 16.dp, top = 16.dp, end = 16.dp),
             onChange = {
-                viewModel.saveInput(it)
-            }
+                onChange.invoke(it)
+            },
+            onDone = {
+                focusManager.clearFocus()
+            },
         )
     }
 }

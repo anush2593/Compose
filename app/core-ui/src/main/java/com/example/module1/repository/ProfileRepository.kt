@@ -1,22 +1,29 @@
 package com.example.module1.repository
 
+import android.annotation.SuppressLint
 import android.content.Context
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.preferencesDataStore
 
-interface ProfileRepository {
-    suspend fun saveInput(input: String)
-}
+val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "sharedPrefs")
+val EXAMPLE_INPUT = stringPreferencesKey("input")
 
 class ProfileRepositoryImpl(
-    context: Context,
+    mContext: Context,
 ) : ProfileRepository {
 
+    private val context = mContext
     override suspend fun saveInput(input: String) {
-//        dataStore.edit { preferences ->
-//            preferences[PreferenceKeys.NUMBER_INPUT] = input
-//        }
+        context.dataStore.edit { sharedPrefs ->
+            sharedPrefs[EXAMPLE_INPUT] = input
+        }
     }
 
     companion object {
+        @SuppressLint("StaticFieldLeak")
         @Volatile
         private var INSTANCE: ProfileRepositoryImpl? = null
 
@@ -32,4 +39,8 @@ class ProfileRepositoryImpl(
             }
         }
     }
+}
+
+interface ProfileRepository {
+    suspend fun saveInput(input: String)
 }
