@@ -10,7 +10,7 @@
         <item name="windowSplashScreenBackground">@color/purple_200</item>
 
         <!-- Required for animated icons -->
-        <item name="windowSplashScreenAnimationDuration">1000f</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
 
         <!-- Set the theme of the Activity that directly follows your splash screen. -->
         <!-- Required -->
