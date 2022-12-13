@@ -1,4 +1,4 @@
-package com.example.module1.repository
+package com.example.module1.data
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,6 +7,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import com.example.module1.domain.ProfileRepository
 
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "sharedPrefs")
 val EXAMPLE_INPUT = stringPreferencesKey("input")
@@ -39,8 +40,4 @@ class ProfileRepositoryImpl(
             }
         }
     }
-}
-
-interface ProfileRepository {
-    suspend fun saveInput(input: String)
 }

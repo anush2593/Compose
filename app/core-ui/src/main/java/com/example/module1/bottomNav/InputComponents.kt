@@ -1,4 +1,4 @@
-package com.example.module1.inputComponents
+package com.example.module1.bottomNav
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
