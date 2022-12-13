@@ -4,4 +4,16 @@
     <style name="Theme.Compose1" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@color/purple_700</item>
     </style>
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <!-- Set the splash screen background, animated icon, and animation duration. -->
+        <item name="windowSplashScreenBackground">@color/purple_200</item>
+
+        <!-- Required for animated icons -->
+        <item name="windowSplashScreenAnimationDuration">1000f</item>
+
+        <!-- Set the theme of the Activity that directly follows your splash screen. -->
+        <!-- Required -->
+        <item name="postSplashScreenTheme">@style/Theme.Compose1</item>
+    </style>
 </resources>
