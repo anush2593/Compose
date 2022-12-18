@@ -13,7 +13,6 @@
             android:exported="false"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.Compose1" />
-        <activity android:name="com.example.ui.MainActivity" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"
