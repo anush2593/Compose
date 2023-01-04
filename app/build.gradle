@@ -66,4 +66,5 @@ dependencies {
     debugImplementation(Dependencies.INSTANCE.composeTooling)
     implementation(Dependencies.INSTANCE.splashScreen)
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    implementation project(':ui')
 }
