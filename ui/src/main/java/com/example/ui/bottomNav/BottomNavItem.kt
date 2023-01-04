@@ -1,6 +1,6 @@
 package com.example.ui.bottomNav
 
-import com.example.compose1.R
+import com.example.ui.R
 
 sealed class BottomNavItem(var route: String, var icon: Int, var title: Int) {
     object Projects :

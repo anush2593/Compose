@@ -21,7 +21,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.compose1.R
 import com.example.ui.bottomNav.*
 import com.example.ui.viewModels.ProfileViewModel
 import com.example.ui.viewModels.ProfileViewModelFactory
