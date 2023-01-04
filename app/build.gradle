@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -45,6 +47,10 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes true
+}
+
 dependencies {
 
     implementation(Dependencies.INSTANCE.kotlin)
@@ -66,5 +72,7 @@ dependencies {
     debugImplementation(Dependencies.INSTANCE.composeTooling)
     implementation(Dependencies.INSTANCE.splashScreen)
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+    implementation "com.google.dagger:hilt-android:2.36"
+    kapt "com.google.dagger:hilt-compiler:2.36"
     implementation project(':ui')
 }
