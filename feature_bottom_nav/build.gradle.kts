@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.ui"
+    namespace = "com.example.feature_bottom_nav"
     compileSdk = 32
 
     defaultConfig {
@@ -55,4 +55,5 @@ dependencies {
     implementation(Dependencies.appCompat)
     implementation(Dependencies.navigation)
     implementation(Dependencies.dataStore)
+    implementation(project(":ui"))
 }
