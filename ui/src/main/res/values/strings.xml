@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Compose1</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="projects">Projects</string>
+    <string name="following">Following</string>
+    <string name="stars">Stars</string>
+    <string name="profile">Profile</string>
+</resources>
