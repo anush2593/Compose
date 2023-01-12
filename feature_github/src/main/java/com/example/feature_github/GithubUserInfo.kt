@@ -1,5 +1,3 @@
 package com.example.feature_github
 
-internal class GithubUserInfo {
-
-}
+internal class GithubUserInfo
