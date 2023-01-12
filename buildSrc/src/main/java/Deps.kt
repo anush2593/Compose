@@ -15,6 +15,7 @@ object Dependencies {
     val hilt by lazy { "com.google.dagger:hilt-android:${Versions.hilt}" }
     val hiltCompiler by lazy { "com.google.dagger:hilt-android-compiler:${Versions.hilt}" }
     val retrofit by lazy { "com.squareup.retrofit2:retrofit:${Versions.retrofit}" }
+    val retrofitConvertor by lazy { "com.squareup.retrofit2:converter-gson:${Versions.retrofit}" }
     val coil by lazy { "io.coil-kt:coil-compose:${Versions.coil}" }
     val viewModel by lazy { "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}" }
     val livedata by lazy { "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}" }
@@ -31,4 +32,8 @@ object Dependencies {
     val toolingPreview by lazy { "androidx.compose.ui:ui-tooling-preview:${Versions.composeVersion}" }
     val materialCompose by lazy { "androidx.compose.material:material:${Versions.composeVersion}" }
     val composeUI by lazy { "androidx.compose.ui:ui:${Versions.composeVersion}" }
+    val coroutine by lazy { "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine}" }
+    val okhttpLogsInterceptor by lazy { "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}" }
+    val okhttp by lazy { "com.squareup.okhttp3:okhttp:${Versions.okhttp}" }
+    val gson by lazy { "com.google.code.gson:gson:${Versions.gson}" }
 }

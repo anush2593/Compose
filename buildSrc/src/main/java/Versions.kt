@@ -21,4 +21,7 @@ object Versions {
     const val navigation = "2.4.0-beta02"
     const val dataStore = "1.0.0"
     const val composeVersion = "1.0.1"
+    const val coroutine = "1.3.9"
+    const val okhttp = "3.14.7"
+    const val gson = "2.8.6"
 }
