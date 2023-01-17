@@ -31,21 +31,37 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.0.1"
+    }
 }
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.7.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(Dependencies.kotlin)
+    implementation(Dependencies.coroutine)
+    implementation(Dependencies.compose)
+    implementation(Dependencies.composeUI)
+    implementation(Dependencies.materialCompose)
+    implementation(Dependencies.toolingPreview)
+    debugImplementation(Dependencies.composeTooling)
+    androidTestImplementation(Dependencies.composeUITest)
+    testImplementation(Dependencies.junit)
+    androidTestImplementation(Dependencies.extJunit)
+    androidTestImplementation(Dependencies.espresso)
+    implementation(project(mapOf("path" to ":core")))
+    implementation(project(":ui"))
+
     implementation(Dependencies.retrofit)
-    implementation(Dependencies.coil)
     implementation(Dependencies.retrofitConvertor)
+    implementation(Dependencies.okhttp)
     implementation(Dependencies.okhttpLogsInterceptor)
     implementation(Dependencies.gson)
-    implementation(project(":ui"))
-    implementation(project(":core"))
+    implementation(Dependencies.viewModel)
+
+    implementation(Dependencies.hilt)
+    implementation(Dependencies.hiltCompiler)
 }

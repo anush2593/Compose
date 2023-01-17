@@ -9,7 +9,7 @@ object Versions {
     const val mviCore = "1.3.1"
     const val composeThemeAdapter = "1.2.1"
     const val appCompatTheme = " 0.25.1"
-    const val hilt = "2.44"
+    const val hilt = "2.38.1"
     const val retrofit = "2.9.0"
     const val coil = "2.2.2"
     const val lifecycle = "2.4.0"

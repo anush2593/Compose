@@ -46,13 +46,9 @@ dependencies {
     implementation(Dependencies.toolingPreview)
     androidTestImplementation(Dependencies.composeUITest)
     debugImplementation(Dependencies.composeTooling)
-    implementation(Dependencies.lifecycleKtx)
     implementation(Dependencies.compose)
     testImplementation(Dependencies.junit)
     androidTestImplementation(Dependencies.extJunit)
     androidTestImplementation(Dependencies.espresso)
     implementation(Dependencies.splashScreen)
-    implementation(Dependencies.appCompat)
-    implementation(Dependencies.navigation)
-    implementation(Dependencies.dataStore)
 }

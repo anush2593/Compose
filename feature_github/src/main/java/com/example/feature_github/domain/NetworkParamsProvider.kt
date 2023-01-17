@@ -1,4 +1,4 @@
-package com.example.feature_github
+package com.example.feature_github.domain
 
 interface NetworkParamsProvider {
     val baseUrl: String

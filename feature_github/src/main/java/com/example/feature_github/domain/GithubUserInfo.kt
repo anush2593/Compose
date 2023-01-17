@@ -1,7 +1,6 @@
-package com.example.feature_github
+package com.example.feature_github.domain
 
-internal class GithubUserResponse(
-
+internal class GithubUserInfo(
     val login: String? = null,
     val id: Int = 0,
     val node_id: String? = null,

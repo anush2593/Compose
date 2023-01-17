@@ -44,6 +44,7 @@ dependencies {
     implementation(Dependencies.composeUI)
     implementation(Dependencies.materialCompose)
     implementation(Dependencies.toolingPreview)
+    implementation(project(mapOf("path" to ":core")))
     androidTestImplementation(Dependencies.composeUITest)
     debugImplementation(Dependencies.composeTooling)
     implementation(Dependencies.lifecycleKtx)

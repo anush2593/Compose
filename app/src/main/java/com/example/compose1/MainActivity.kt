@@ -11,7 +11,7 @@ class MainActivity : ComponentActivity() {
         try {
             intent = Intent(
                 applicationContext,
-                Class.forName("com.example.feature_bottom_nav.MainActivity")
+                Class.forName("com.example.feature_github.presentation.MainActivity")
             )
             startActivity(intent)
         } catch (e: ClassNotFoundException) {
