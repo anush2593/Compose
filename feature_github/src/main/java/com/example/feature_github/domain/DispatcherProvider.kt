@@ -2,6 +2,7 @@ package com.example.feature_github
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
 
 interface DispatcherProvider {
 
@@ -12,7 +13,7 @@ interface DispatcherProvider {
     val computation: CoroutineDispatcher
 }
 
-internal class DispatcherProviderImpl : DispatcherProvider {
+class DispatcherProviderImpl @Inject constructor() : DispatcherProvider {
 
     override val main: CoroutineDispatcher = Dispatchers.Main
 

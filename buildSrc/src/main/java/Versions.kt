@@ -11,7 +11,7 @@ object Versions {
     const val appCompatTheme = " 0.25.1"
     const val hilt = "2.38.1"
     const val retrofit = "2.9.0"
-    const val coil = "2.2.2"
+    const val coil = "2.2.0"
     const val lifecycle = "2.4.0"
     const val lifeCycleKtx = "2.3.1"
     const val compose = "1.3.1"

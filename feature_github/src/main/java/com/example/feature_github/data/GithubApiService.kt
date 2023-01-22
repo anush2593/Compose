@@ -1,11 +1,11 @@
 package com.example.feature_github.data
 
 import com.example.feature_github.ApiGithubResponse
-import kotlinx.coroutines.flow.Flow
+import retrofit2.Response
 import retrofit2.http.GET
 
-internal interface GithubApiService {
+interface GithubApiService {
 
-    @GET("users")
-    suspend fun getGitHubUsers(): Flow<List<ApiGithubResponse>>
+    @GET("users/willnorris")
+    suspend fun getGitHubUser(): Response<ApiGithubResponse>
 }

@@ -1,33 +1,51 @@
 package com.example.feature_github.presentation
 
-import android.app.Application
+import android.util.Log
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.core.BaseViewModel
 import com.example.feature_github.domain.GetGithubUsersUseCase
 import com.example.feature_github.domain.GithubUserInfo
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
+import com.example.feature_github.domain.GithubUserMapper
+import com.example.feature_github.domain.NetworkResult
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-internal class GithubViewModel constructor(
-    private val getGithubUsersUseCase: GetGithubUsersUseCase,
-    application: Application
-) : BaseViewModel(application) {
+@HiltViewModel
+class GithubViewModel @Inject constructor(
+    val getGithubUsersUseCase: GetGithubUsersUseCase,
+    private val githubUserMapper: GithubUserMapper
+) : ViewModel() {
 
-    private val _githubUsers = MutableStateFlow<List<GithubUserInfo>>(emptyList())
-    val githubUsers = _githubUsers.asStateFlow()
+    private var _githubUser = MutableLiveData<NetworkResult<GithubUserInfo>>()
+    var githubUser = _githubUser
 
     init {
-        viewModelScope.launch {
-            fetchGithubUsers()
-        }
+        fetchGithubUser()
     }
 
-    private suspend fun fetchGithubUsers() {
-        getGithubUsersUseCase.invoke().onEach { result ->
-            _githubUsers.value = result
-        }.launchIn(viewModelScope)
+    private fun fetchGithubUser() {
+        viewModelScope.launch {
+            getGithubUsersUseCase.invoke().collect {
+                when (it) {
+                    is NetworkResult.Success -> {
+                        val response = githubUserMapper.map(it.data)
+                        _githubUser.value = NetworkResult.Success(response)
+                        Log.d("GithubViewModel", githubUser.value?.data.toString())
+                    }
+                    is NetworkResult.Error -> {
+                        // show error message
+                        Log.d("GithubViewModel", "Error")
+                        TODO()
+                    }
+                    is NetworkResult.Loading -> {
+                        // show a progress bar
+                        Log.d("GithubViewModel", "Loading")
+                        TODO()
+                    }
+                }
+            }
+        }
     }
 }

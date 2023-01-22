@@ -1,8 +1,8 @@
 package com.example.feature_github.data
 
-import com.example.feature_github.domain.GithubUserInfo
-import kotlinx.coroutines.flow.Flow
+import com.example.feature_github.domain.GithubUserResponse
+import retrofit2.Response
 
-internal interface GithubRemoteDataSource {
-    suspend fun getGitHubUsers(): Flow<List<GithubUserInfo>>
+interface GithubRemoteDataSource {
+    suspend fun getGitHubUser(): Response<GithubUserResponse>
 }

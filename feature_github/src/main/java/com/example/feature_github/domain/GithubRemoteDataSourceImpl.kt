@@ -2,17 +2,13 @@ package com.example.feature_github.domain
 
 import com.example.feature_github.data.GithubApiService
 import com.example.feature_github.data.GithubRemoteDataSource
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
+import retrofit2.Response
+import javax.inject.Inject
 
-internal class GithubRemoteDataSourceImpl constructor(
-    private val githubApiService: GithubApiService,
-    private val errorMapper: ErrorMapper,
-    private val githubUserMapper: GithubUserMapper
+class GithubRemoteDataSourceImpl @Inject constructor(
+    private val githubApiService: GithubApiService
 ) : GithubRemoteDataSource {
-    override suspend fun getGitHubUsers(): Flow<List<GithubUserInfo>> {
-        return githubApiService.getGitHubUsers().map { result ->
-            githubUserMapper.map(result)
-        }
+    override suspend fun getGitHubUser(): Response<GithubUserResponse> {
+        return githubApiService.getGitHubUser()
     }
 }

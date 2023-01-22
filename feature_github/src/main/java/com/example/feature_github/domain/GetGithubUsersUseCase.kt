@@ -4,13 +4,14 @@ import com.example.feature_github.DispatcherProvider
 import com.example.feature_github.data.GithubRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-internal class GetGithubUsersUseCase constructor(
+class GetGithubUsersUseCase @Inject constructor(
     private val dispatcherProvider: DispatcherProvider,
     private val githubRepository: GithubRepository
 ) {
-    suspend operator fun invoke(): Flow<List<GithubUserInfo>> =
+    suspend operator fun invoke(): Flow<NetworkResult<GithubUserResponse>> =
         withContext(dispatcherProvider.io) {
-            githubRepository.fetchUsers()
+            githubRepository.fetchUser()
         }
 }
