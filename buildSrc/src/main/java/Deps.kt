@@ -33,7 +33,12 @@ object Dependencies {
     val materialCompose by lazy { "androidx.compose.material:material:${Versions.composeVersion}" }
     val composeUI by lazy { "androidx.compose.ui:ui:${Versions.composeVersion}" }
     val coroutine by lazy { "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutine}" }
-    val okhttpLogsInterceptor by lazy { "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}" }
+    val okhttpLogsInterceptor by lazy { "com.squareup.okhttp3:logging-interceptor:${Versions.okhttpInterceptor}" }
     val okhttp by lazy { "com.squareup.okhttp3:okhttp:${Versions.okhttp}" }
     val gson by lazy { "com.google.code.gson:gson:${Versions.gson}" }
+
+    val hiltCompilr by lazy { "androidx.hilt:hilt-compiler:${Versions.hiltCompiler}" }
+    val hiltNavigationComponent by lazy { "androidx.hilt:hilt-navigation-compose:${Versions.hiltNavComponent}" }
+    val composeViewModelLifecycle by lazy { "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.lifecycleCompose}" }
+    val runtimeLiveData by lazy { "androidx.compose.runtime:runtime-livedata:${Versions.runtimeLiveData}" }
 }

@@ -63,11 +63,12 @@ dependencies {
     implementation(Dependencies.okhttpLogsInterceptor)
     implementation(Dependencies.gson)
     implementation(Dependencies.viewModel)
+    implementation(Dependencies.coil)
 
     implementation(Dependencies.hilt)
-    kapt("androidx.hilt:hilt-compiler:1.0.0")
-    kapt("com.google.dagger:hilt-android-compiler:2.38.1")
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1")
-    implementation("androidx.compose.runtime:runtime-livedata:1.0.1")
+    kapt(Dependencies.hiltCompilr)
+    kapt(Dependencies.hiltCompiler)
+    implementation(Dependencies.hiltNavigationComponent)
+    implementation(Dependencies.composeViewModelLifecycle)
+    implementation(Dependencies.runtimeLiveData)
 }
