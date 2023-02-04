@@ -6,12 +6,12 @@ class GithubUserMapper @Inject constructor() {
 
     fun map(input: GithubUserResponse?): GithubUserInfo = GithubUserInfo(
         name = input?.name,
-        avatar_url = input?.avatar_url,
+        avatarUrl = input?.avatarUrl,
         bio = input?.bio,
         company = input?.company,
         location = input?.location,
-        twitter_username = input?.twitter_username,
-        githubUrl = input?.html_url,
+        twitterUsername = input?.twitterUsername,
+        githubUrl = input?.htmlUrl,
         login = input?.login
 
     )

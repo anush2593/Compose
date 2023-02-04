@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="user_name_size">24sp</dimen>
+    <dimen name="button_font_size">11sp</dimen>
+
+    <dimen name="row_padding">16dp</dimen>
+    <dimen name="corner_radius">16dp</dimen>
+    <dimen name="corner_half_radius">8dp</dimen>
+    <dimen name="button_width">250dp</dimen>
+    <dimen name="surface_height">300dp</dimen>
+    <dimen name="avatar_height">140dp</dimen>
+    <dimen name="avatar_width">100dp</dimen>
+
+    <dimen name="spacer_small_margin">2dp</dimen>
+    <dimen name="spacer_big_margin">40dp</dimen>
+
+</resources>

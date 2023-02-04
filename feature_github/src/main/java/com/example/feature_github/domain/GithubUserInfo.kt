@@ -5,8 +5,8 @@ data class GithubUserInfo(
     val company: String? = null,
     val location: String? = null,
     val bio: String? = null,
-    val twitter_username: String? = null,
-    val avatar_url: String? = null,
+    val twitterUsername: String? = null,
+    val avatarUrl: String? = null,
     val githubUrl: String? = null,
     val login: String? = null
 )

@@ -37,12 +37,12 @@ class GithubViewModel @Inject constructor(
                     is NetworkResult.Error -> {
                         // show error message
                         Log.d("GithubViewModel", "Error")
-                        TODO()
+                        //  TODO()
                     }
                     is NetworkResult.Loading -> {
                         // show a progress bar
                         Log.d("GithubViewModel", "Loading")
-                        TODO()
+                        // TODO()
                     }
                 }
             }

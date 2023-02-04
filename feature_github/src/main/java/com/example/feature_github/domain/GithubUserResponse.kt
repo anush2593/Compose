@@ -10,52 +10,52 @@ class GithubUserResponse(
     val id: Int = 0,
 
     @SerializedName("node_id")
-    val node_id: String? = null,
+    val nodeId: String? = null,
 
     @SerializedName("avatar_url")
-    val avatar_url: String? = null,
+    val avatarUrl: String? = null,
 
     @SerializedName("gravatar_id")
-    val gravatar_id: String? = null,
+    val gravatarId: String? = null,
 
     @SerializedName("url")
     val url: String? = null,
 
     @SerializedName("html_url")
-    val html_url: String? = null,
+    val htmlUrl: String? = null,
 
     @SerializedName("followers_url")
-    val followers_url: String? = null,
+    val followersUrl: String? = null,
 
     @SerializedName("following_url")
-    val following_url: String? = null,
+    val followingUrl: String? = null,
 
     @SerializedName("gists_url")
-    val gists_url: String? = null,
+    val gistsUrl: String? = null,
 
     @SerializedName("starred_url")
-    val starred_url: String? = null,
+    val starredUrl: String? = null,
 
     @SerializedName("subscriptions_url")
-    val subscriptions_url: String? = null,
+    val subscriptionsUrl: String? = null,
 
     @SerializedName("organizations_url")
-    val organizations_url: String? = null,
+    val organizationsUrl: String? = null,
 
     @SerializedName("repos_url")
-    val repos_url: String? = null,
+    val reposUrl: String? = null,
 
     @SerializedName("events_url")
     val events_url: String? = null,
 
     @SerializedName("received_events_url")
-    val received_events_url: String? = null,
+    val receivedEventsUrl: String? = null,
 
     @SerializedName("type")
     val type: String? = null,
 
     @SerializedName("site_admin")
-    val site_admin: String? = null,
+    val siteAdmin: String? = null,
     @SerializedName("name")
     val name: String? = null,
     @SerializedName("company")
@@ -71,11 +71,11 @@ class GithubUserResponse(
     @SerializedName("bio")
     val bio: String? = null,
     @SerializedName("twitter_username")
-    val twitter_username: String? = null,
+    val twitterUsername: String? = null,
     @SerializedName("public_repos")
     val public_repos: Int,
     @SerializedName("public_gists")
-    val public_gists: Int,
+    val publicGists: Int,
     @SerializedName("followers")
     val followers: Int,
     @SerializedName("following")
