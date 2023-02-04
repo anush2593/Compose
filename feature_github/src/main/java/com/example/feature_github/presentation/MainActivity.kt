@@ -14,9 +14,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import coil.compose.rememberAsyncImagePainter
+import coil.request.ImageRequest
 import com.example.feature_github.domain.CustomLocalUriHandler
 import com.example.feature_github.domain.getDimenDp
 import com.example.feature_github.domain.getDimenSp
@@ -46,6 +48,7 @@ class MainActivity : ComponentActivity() {
         val company = user?.company ?: getString(R.string.no_company_available)
         val location = user?.location ?: getString(R.string.no_location_available)
         val githubLink = user?.githubUrl ?: ""
+        val avatarUrl = user?.avatarUrl ?: ""
 
         Surface(
             shape = RoundedCornerShape(resources.getDimenDp(R.dimen.corner_radius)),
@@ -53,7 +56,16 @@ class MainActivity : ComponentActivity() {
             modifier = Modifier
                 .height(resources.getDimenDp(R.dimen.surface_height))
         ) {
-            CardContent(userName, bio, twitter, company, location, githubLink, uriHandler)
+            CardContent(
+                userName,
+                bio,
+                twitter,
+                company,
+                location,
+                githubLink,
+                avatarUrl,
+                uriHandler
+            )
         }
     }
 
@@ -65,6 +77,7 @@ class MainActivity : ComponentActivity() {
         company: String,
         location: String,
         githubUrl: String,
+        avatarUrl: String,
         uriHandler: CustomLocalUriHandler
     ) {
         Row(
@@ -82,7 +95,7 @@ class MainActivity : ComponentActivity() {
                 ReadMoreButton(uriHandler, githubUrl)
             }
 
-            AvatarImage()
+            AvatarImage(avatarUrl)
         }
     }
 
@@ -130,7 +143,7 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    fun AvatarImage() {
+    fun AvatarImage(avatarUrl: String) {
         Surface(
             shape = RoundedCornerShape(resources.getDimenDp(R.dimen.corner_radius)),
             modifier = Modifier.size(
@@ -138,10 +151,18 @@ class MainActivity : ComponentActivity() {
                 height = resources.getDimenDp(R.dimen.avatar_height)
             )
         ) {
+            val painter = rememberAsyncImagePainter(
+                ImageRequest.Builder(LocalContext.current)
+                    .data(data = avatarUrl)
+                    .allowHardware(false)
+                    .build()
+            )
+
             Image(
-                painter = painterResource(id = R.drawable.bg_placeholder),
-                contentScale = ContentScale.Crop,
-                contentDescription = "Avatar"
+                painter = painter,
+                contentDescription = "Avatar",
+                modifier = Modifier.fillMaxSize(),
+                contentScale = ContentScale.Crop
             )
         }
     }
