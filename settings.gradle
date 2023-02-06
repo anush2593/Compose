@@ -14,4 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Compose1"
 include ':app'
-include ':app:core-ui'
+include ':ui'
+include ':feature_bottom_nav'
+include ':feature_github'
+include ':core'

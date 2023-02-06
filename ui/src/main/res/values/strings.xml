@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Compose1</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="projects">Projects</string>
+    <string name="following">Following</string>
+    <string name="stars">Stars</string>
+    <string name="profile">Profile</string>
+    <string name="no_name_available">No name available</string>
+    <string name="no_bio_available">No bio available</string>
+    <string name="no_twitter_user_name_available">No twitter username available</string>
+    <string name="no_company_available">No company available</string>
+    <string name="no_location_available">No location available</string>
+</resources>
