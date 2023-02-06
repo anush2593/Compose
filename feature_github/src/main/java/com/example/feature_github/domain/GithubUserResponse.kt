@@ -1,12 +1,13 @@
 package com.example.feature_github.domain
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
 class GithubUserResponse(
     @SerializedName("login")
     val login: String? = null,
 
-    @SerializedName("id")
+    @Keep
     val id: Int = 0,
 
     @SerializedName("node_id")
@@ -18,7 +19,7 @@ class GithubUserResponse(
     @SerializedName("gravatar_id")
     val gravatarId: String? = null,
 
-    @SerializedName("url")
+    @Keep
     val url: String? = null,
 
     @SerializedName("html_url")
@@ -51,37 +52,50 @@ class GithubUserResponse(
     @SerializedName("received_events_url")
     val receivedEventsUrl: String? = null,
 
-    @SerializedName("type")
+    @Keep
     val type: String? = null,
 
     @SerializedName("site_admin")
     val siteAdmin: String? = null,
-    @SerializedName("name")
+
+    @Keep
     val name: String? = null,
-    @SerializedName("company")
+
+    @Keep
     val company: String? = null,
     @SerializedName("blog")
+
     val blog: String? = null,
-    @SerializedName("location")
+    @Keep
     val location: String? = null,
-    @SerializedName("email")
+
+    @Keep
     val email: String? = null,
-    @SerializedName("hireable")
+
+    @Keep
     val hireable: String? = null,
-    @SerializedName("bio")
+
+    @Keep
     val bio: String? = null,
+
     @SerializedName("twitter_username")
     val twitterUsername: String? = null,
+
     @SerializedName("public_repos")
     val public_repos: Int,
+
     @SerializedName("public_gists")
     val publicGists: Int,
-    @SerializedName("followers")
+
+    @Keep
     val followers: Int,
-    @SerializedName("following")
+
+    @Keep
     val following: Int,
+
     @SerializedName("created_at")
     val created_at: String? = null,
+
     @SerializedName("updated_at")
     val updated_at: String? = null
 )
